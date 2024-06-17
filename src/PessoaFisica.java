@@ -69,4 +69,8 @@ public class PessoaFisica extends Cliente{
         return cpfValido;
     }
 
+    public boolean autenticar(String chave){
+        return chave.equals(cpf);
+    }
+
 }

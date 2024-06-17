@@ -12,4 +12,8 @@ public class PessoaJuridica extends Cliente{
         this.Numero_funcionarios = Numero_funcionarios;
         this.setor = setor;
     }
+
+    public boolean autenticar(String chave){
+        return chave.equals(cnpj);
+    }
 }

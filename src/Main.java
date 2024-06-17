@@ -28,48 +28,30 @@ public class Main {
 
         );
 
-        if (joao.cpf != null) {
-            Conta conta1 = new Conta(1234, joao, 0, 1500);
-            Conta conta2 = new Conta(12121, joao, 10000, 1500);
+        Conta conta1 = new ContaPoupanca(1234, joao, 0, 1500);
+        Conta conta2 = new ContaUniversitaria(12121, joao, 10000, 1500);
+        Conta conta3 = new ContaCorrente(12345, joao, 0, 15000);
 
-            conta1.depositar(3000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.depositar(2000);
-            conta1.sacar(500);
-
-            conta2.transferir(conta1, 666);
-            conta2.depositar(234);
-
-            conta1.imprimirExtrato();
-            conta2.imprimirExtrato();
-
-            int media = Operacao.getTotalOperacoes() / Conta.getTotalContas();
-            System.out.println("Média de operações por conta aberta: " + media);
-        } else {
-            System.out.println("CPF Inválido!");
+        if (Alex.autenticar("121.3213124.862")){
+            System.out.println("Alex tá autenticado");
         }
-        if (matheus.cpf != null){
-            Conta conta3 = new Conta(20239525, matheus, 900, 20000);
-
-            conta3.depositar(2000);
-            conta3.sacar(120);
-            conta3.imprimirExtrato();
+        if (! (Alex.autenticar("121.321312.86"))){
+            System.out.println("Alex não tá autenticado");
         }
 
+        System.out.println("Teste Conta Poupança");
+
+        conta1.setLimite(10000);
+        conta1.setLimite(200);
+        conta1.setLimite(10);
+
+        System.out.println("Teste Conta Universitaria");
+        conta2.setLimite(600);
+        conta2.setLimite(400);
+        conta2.setLimite(-1);
+
+        System.out.println("Teste Conta Corrente");
+        conta3.setLimite(400);
+        conta3.setLimite(-105);
     }
-
 }
